@@ -86,6 +86,10 @@ class UpliftTreeRegressor(object):
     depth: int = 0) -> None: # current branch depth
         '''
         recursive function to build decision tree
+        
+        The decision tree is stored as an array, with each row representing a node
+        nodes follow the format [split feature, split value, left child pointer, right child pointer]
+        leaf nodes follow the format [-1 (special identifier), uplift, nan, nan]
         '''
         # create leaf node
         # Predicted value of treatment effect is difference in means between treatment and control groups
